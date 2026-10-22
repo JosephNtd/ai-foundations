@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dữ liệu thật (log, điểm Moodle) & secret — không bao giờ commit
+data/
+.env
