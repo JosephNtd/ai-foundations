@@ -2,16 +2,22 @@ import random
 import sys
 from datetime import datetime, timezone, timedelta
 
-def make_log(path: str, l_lines: int) -> None:
+def make_log(path: str, n_lines: int) -> None:
     with open(path, "w", encoding="utf-8") as f:
         ngay_bat_dau = datetime(2026, 1, 1, tzinfo=timezone(timedelta(hours=7)))
         ngay_ket_thuc = datetime(2026, 12, 31, tzinfo=timezone(timedelta(hours=7)))
 
         ts_bat_dau = ngay_bat_dau.timestamp()
         ts_ket_thuc = ngay_ket_thuc.timestamp()
-        for _ in range(int(l_lines)):
-            ip = "203.0.113.x"
-            
+        for _ in range(n_lines):
+            ip = random.choice(
+                [
+                    "203.0.113.42",
+                    "198.51.100.7",
+                    "192.0.2.15"
+                ]
+            )
+
             ts_ngau_nhien = random.uniform(ts_bat_dau, ts_ket_thuc)
             dt_ngau_nhien = datetime.fromtimestamp(ts_ngau_nhien, tz=timezone(timedelta(hours=7)))
             time = dt_ngau_nhien.strftime("[%d/%b/%Y:%H:%M:%S %z]")
