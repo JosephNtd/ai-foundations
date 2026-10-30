@@ -15,3 +15,5 @@ wheels/
 # Dữ liệu thật (log, điểm Moodle) & secret — không bao giờ commit
 data/
 .env
+
+parser_rebuild.py
